@@ -6,13 +6,13 @@ Run command line: psql -U postgres -f setup.sql .
 Run command line: psql -U postgres -d safty -f data.sql .  
 Run command line: psql -U postgres -d safty
 Run sql commnd on psql shell:   
-\COPY motor FROM '/Users/weiliu/Desktop/DB PROJECT/Motor.csv' DELIMITER ',' CSV HEADER;
-\COPY complaint FROM '/Users/weiliu/Desktop/DB PROJECT/Complaint.csv' DELIMITER ',' CSV HEADER;
-ALTER TABLE complaint ALTER COLUMN fr_dt TYPE DATE using to_date(fr_dt, 'MM/DD/YYYY');
-ALTER TABLE complaint ALTER COLUMN to_dt TYPE DATE using to_date(to_dt, 'MM/DD/YYYY');
-ALTER TABLE complaint ALTER COLUMN rpt_dt TYPE DATE using to_date(rpt_dt, 'MM/DD/YYYY');
-ALTER TABLE motor ALTER COLUMN _date TYPE DATE using to_date(_date, 'MM/DD/YYYY');
-
+\COPY motor FROM '/Users/weiliu/Desktop/DB PROJECT/Motor.csv' DELIMITER ',' CSV HEADER;   
+\COPY complaint FROM '/Users/weiliu/Desktop/DB PROJECT/Complaint.csv' DELIMITER ',' CSV HEADER;   
+ALTER TABLE complaint ALTER COLUMN fr_dt TYPE DATE using to_date(fr_dt, 'MM/DD/YYYY');   
+ALTER TABLE complaint ALTER COLUMN to_dt TYPE DATE using to_date(to_dt, 'MM/DD/YYYY');   
+ALTER TABLE complaint ALTER COLUMN rpt_dt TYPE DATE using to_date(rpt_dt, 'MM/DD/YYYY');   
+ALTER TABLE motor ALTER COLUMN _date TYPE DATE using to_date(_date, 'MM/DD/YYYY');   
+   
 DELETE FROM complaint WHERE fr_dt >= '2006-01-01' and fr_dt < '2012-01-01';
 ALTER TABLE complaint DROP x_coor, DROP y_coor, DROP hadevelop, DROP juris, DROP lat_long, DROP addr;
 ALTER TABLE motor ALTER COLUMN _date TYPE DATE using to_date(_date, 'MM/DD/YYYY');
