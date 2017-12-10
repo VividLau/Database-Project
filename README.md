@@ -32,7 +32,8 @@ GRANT ALL PRIVILEGES ON offense_cd, region TO safty;
 copy (select lat, long, uni_key from motor) TO '/tmp/motor_locate.csv' DELIMITER ',' CSV HEADER;   
 copy (select lat, long, cmplnt_num, ofns_desc from complaint) TO '/tmp/complaint_locate.csv' DELIMITER ',' CSV HEADER;  
    
-ALTER TABLE complaint DROP ofns_desc;
+ALTER TABLE complaint DROP ofns_desc;  
+ALTER TABLE motor DROP zip, boro;
 
 
 
