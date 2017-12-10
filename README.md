@@ -2,10 +2,10 @@
 cd to directory where datasets are stored at.   
 Make sure that your postgresql DB has superuser ***postgres***.
 
-Run command line: psql -U postgres -f setup.sql   
-Run command line: psql -U postgres -d safty -f data.sql
+Run command line: psql -U postgres -f setup.sql .  
+Run command line: psql -U postgres -d safty -f data.sql .  
 Run command line: psql -U postgres -d safty
-Run sql commnd on psql shell:
+Run sql commnd on psql shell:   
 \COPY motor FROM '/Users/weiliu/Desktop/DB PROJECT/Motor.csv' DELIMITER ',' CSV HEADER;
 \COPY complaint FROM '/Users/weiliu/Desktop/DB PROJECT/Complaint.csv' DELIMITER ',' CSV HEADER;
 ALTER TABLE complaint ALTER COLUMN fr_dt TYPE DATE using to_date(fr_dt, 'MM/DD/YYYY');
