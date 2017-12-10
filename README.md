@@ -22,7 +22,7 @@ INSERT INTO offense_code select distinct ky_cd, ofns_desc from complaint where o
    
 ALTER TABLE complaint DROP ofns_desc, DROP;
 
-copy (select lat, long, uni_key from motor) TO '/tmp/motor_locate.csv' DELIMITER ',' CSV HEADER;
+copy (select lat, long, uni_key from motor) TO '/tmp/motor_locate.csv' DELIMITER ',' CSV HEADER;   
 copy (select lat, long, cmplnt_num from complaint) TO '/tmp/complaint_locate.csv' DELIMITER ',' CSV HEADER;
 
 
