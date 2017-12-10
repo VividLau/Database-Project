@@ -27,9 +27,9 @@ copy (select lat, long, cmplnt_num from complaint) TO '/tmp/complaint_locate.csv
 
 
 
-***For MongoDB***
-make sure that the files you want to import are in the *bin* directory of mongodb.
-connect to mongoDB.
-**command on terminal:**
-./mongoimport -d safty -c complaint --type csv --file complaint_locate.csv --headerline
+***For MongoDB*** .  
+make sure that the files you want to import are in the *bin* directory of mongodb.   
+connect to mongoDB.   
+**command on terminal:** .  
+./mongoimport -d safty -c complaint --type csv --file complaint_locate.csv --headerline .  
 ./mongoimport -d safty -c motor --type csv --file motor_locate.csv --headerline
