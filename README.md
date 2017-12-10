@@ -33,7 +33,7 @@ copy (select lat, long, uni_key from motor) TO '/tmp/motor_locate.csv' DELIMITER
 copy (select lat, long, cmplnt_num, ofns_desc from complaint) TO '/tmp/complaint_locate.csv' DELIMITER ',' CSV HEADER;  
    
 ALTER TABLE complaint DROP ofns_desc;  
-ALTER TABLE motor DROP zip, boro;
+ALTER TABLE motor DROP zip, DROP boro;
 
 
 
