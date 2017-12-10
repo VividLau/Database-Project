@@ -15,7 +15,7 @@ ALTER TABLE motor ALTER COLUMN _date TYPE DATE using to_date(_date, 'MM/DD/YYYY'
    
 DELETE FROM complaint WHERE fr_dt < '2012-01-01';   
 ALTER TABLE complaint DROP x_coor, DROP y_coor, DROP hadevelop, DROP juris, DROP lat_long, DROP addr, DROP pd_cd, DROP pd_desc;   
-ALTER TABLE motor DROP zip, DROP location;   
+ALTER TABLE motor DROP location;   
    
 CREATE TABLE offense_cd ( ky_cd INT, ofns_desc VARCHAR(80) );   
 INSERT INTO offense_cd select distinct ky_cd, ofns_desc from complaint where ofns_desc is not NULL;   
