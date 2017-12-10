@@ -13,7 +13,7 @@ ALTER TABLE complaint ALTER COLUMN to_dt TYPE DATE using to_date(to_dt, 'MM/DD/Y
 ALTER TABLE complaint ALTER COLUMN rpt_dt TYPE DATE using to_date(rpt_dt, 'MM/DD/YYYY');   
 ALTER TABLE motor ALTER COLUMN _date TYPE DATE using to_date(_date, 'MM/DD/YYYY');   
    
-DELETE FROM complaint WHERE fr_dt >= '2006-01-01' and fr_dt < '2012-01-01';   
+DELETE FROM complaint WHERE fr_dt < '2012-01-01';   
 ALTER TABLE complaint DROP x_coor, DROP y_coor, DROP hadevelop, DROP juris, DROP lat_long, DROP addr, DROP pd_cd, DROP pd_desc;   
 ALTER TABLE motor DROP zip, DROP location;   
    
