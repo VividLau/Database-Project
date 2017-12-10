@@ -19,11 +19,11 @@ ALTER TABLE motor DROP zip, DROP location;
    
 CREATE TABLE offense_cd ( ky_cd INT, ofns_desc VARCHAR(80) );   
 INSERT INTO offense_cd select distinct ky_cd, ofns_desc from complaint where ofns_desc is not NULL;   
-   
-ALTER TABLE complaint DROP ofns_desc;
 
 copy (select lat, long, uni_key from motor) TO '/tmp/motor_locate.csv' DELIMITER ',' CSV HEADER;   
-copy (select lat, long, cmplnt_num from complaint) TO '/tmp/complaint_locate.csv' DELIMITER ',' CSV HEADER;
+copy (select lat, long, cmplnt_num, ofns_desc from complaint) TO '/tmp/complaint_locate.csv' DELIMITER ',' CSV HEADER;  
+   
+ALTER TABLE complaint DROP ofns_desc;
 
 
 
