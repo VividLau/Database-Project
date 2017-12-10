@@ -18,7 +18,7 @@ ALTER TABLE complaint DROP x_coor, DROP y_coor, DROP hadevelop, DROP juris, DROP
 ALTER TABLE motor DROP zip, DROP location;   
    
 CREATE TABLE offense_cd ( ky_cd INT, ofns_desc VARCHAR(80) );   
-INSERT INTO offense_code select distinct ky_cd, ofns_desc from complaint where ofns_desc is not NULL;   
+INSERT INTO offense_cd select distinct ky_cd, ofns_desc from complaint where ofns_desc is not NULL;   
    
 ALTER TABLE complaint DROP ofns_desc, DROP;
 
