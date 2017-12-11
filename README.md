@@ -28,8 +28,8 @@ CREATE TABLE region (
 INSERT INTO region select distinct lat, long, zip, boro from motor
 where lat > 0 and zip is not NULL;  
 GRANT ALL PRIVILEGES ON offense_cd, region TO safty;
-
-copy (select lat, long, uni_key from motor) TO '/tmp/motor_locate.csv' DELIMITER ',' CSV HEADER;   
+  
+  
 copy (select lat, long, cmplnt_num, ofns_desc, fr_dt from complaint) TO '/tmp/complaint_locate.csv' DELIMITER ',' CSV HEADER;  
    
 ALTER TABLE complaint DROP ofns_desc;  
@@ -42,4 +42,3 @@ make sure that the files you want to import are in the *bin* directory of mongod
 connect to mongoDB.   
 **command on terminal:** .  
 ./mongoimport -d safty -c complaint --type csv --file complaint_locate.csv --headerline .  
-./mongoimport -d safty -c motor --type csv --file motor_locate.csv --headerline
